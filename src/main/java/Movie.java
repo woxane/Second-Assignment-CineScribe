@@ -63,9 +63,9 @@ public class Movie {
         }
     }
     public int getImdbVotesViaApi(String moviesInfoJson){
-        //TODO --> (This function must change and return the "ImdbVotes" as an Integer)
-        // NOTICE :: you are not permitted to convert this function to return a String instead of an int !!!
         int ImdbVotes = 0;
+        JSONObject jsonObject = new JSONObject(moviesInfoJson);
+        ImdbVotes = Integer.parseInt((jsonObject.getString("imdbVotes").replace("," , "")));
         return ImdbVotes;
     }
 
