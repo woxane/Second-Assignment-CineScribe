@@ -82,4 +82,12 @@ public class Movie {
         actors = jsonObject.getString("Actors");
         return actors;
     }
+
+    public String getReleaseDateViaApi(String movieInfoJson) {
+        String date = "";
+        JSONObject jsonObject = new JSONObject(movieInfoJson);
+        date = jsonObject.getString("Released");
+        return date;
+
+    }
 }
