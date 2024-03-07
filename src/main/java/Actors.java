@@ -53,8 +53,9 @@ public class Actors {
     }
 
     public boolean isAlive(String actorsInfoJson){
-        //TODO --> (If your chosen actor is alive it must return true otherwise it must return false)
         boolean statues = false;
+        JSONObject jsonObject = new JSONObject(actorsInfoJson);
+        statues = jsonObject.getBoolean("is_alive");
         return statues;
     }
 
