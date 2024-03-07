@@ -60,8 +60,9 @@ public class Actors {
     }
 
     public String getDateOfDeathViaApi(String actorsInfoJson){
-        //TODO --> (If your chosen actor is deceased it must return the date of death)  -->
         String date = "";
+        JSONObject jsonObject = new JSONObject(actorsInfoJson);
+        date = jsonObject.getString("death");
         return date;
     }
 
