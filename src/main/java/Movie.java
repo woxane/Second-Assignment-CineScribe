@@ -76,7 +76,10 @@ public class Movie {
         return rating;
     }
 
-    public void getActorListViaApi(String movieInfoJson){
-        //TODO --> (This function must return the "Actors" in actorsList)
+    public String getActorListViaApi(String movieInfoJson){
+        String actors = "";
+        JSONObject jsonObject = new JSONObject(movieInfoJson);
+        actors = jsonObject.getString("Actors");
+        return actors;
     }
 }
