@@ -45,7 +45,7 @@ public class Movie {
                 String response = jsonObject.getString("Response");
 
                 if (response == "False") {
-                    return "Movie Not Found!";
+                    return null;
                 } else {
                     return stringBuilder.toString();
                 }
