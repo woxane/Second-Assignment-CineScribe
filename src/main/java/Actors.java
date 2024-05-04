@@ -1,10 +1,12 @@
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.HttpURLConnection;
 public class Actors {
-    public static final String API_KEY = "Your API_KEY";   // TODO --> add your api key about Actors here
+    public static final String API_KEY = "35eAZSrD1EP0lPLYS7UywA==u2u9d3kid8d6hqLa";
     String netWorth;
     Boolean isAlive;
 
@@ -44,20 +46,23 @@ public class Actors {
         }
     }
     public double getNetWorthViaApi(String actorsInfoJson){
-        //TODO --> (This function must return the "NetWorth")
         double result = 0.0;
+        JSONObject jsonObject = new JSONObject(actorsInfoJson);
+        result = jsonObject.getDouble("net_worth");
         return result;
     }
 
     public boolean isAlive(String actorsInfoJson){
-        //TODO --> (If your chosen actor is alive it must return true otherwise it must return false)
         boolean statues = false;
+        JSONObject jsonObject = new JSONObject(actorsInfoJson);
+        statues = jsonObject.getBoolean("is_alive");
         return statues;
     }
 
     public String getDateOfDeathViaApi(String actorsInfoJson){
-        //TODO --> (If your chosen actor is deceased it must return the date of death)  -->
         String date = "";
+        JSONObject jsonObject = new JSONObject(actorsInfoJson);
+        date = jsonObject.getString("death");
         return date;
     }
 
